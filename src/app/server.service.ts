@@ -6,11 +6,15 @@ import { database, initializeApp } from 'firebase';
 export class ServerService {
     constructor(private http:Http ){}
 
+    // storeServers(servers: any[]){
+    //     return this.http.post('https://ng-test-a84d6.firebaseio.com/data.json', servers); 
+    // }
+
     storeServers(servers: any[]){
-        return this.http.post('https://ng-test-a84d6.firebaseio.com/data.json', servers); 
+        return this.http.put('https://ng-test-a84d6.firebaseio.com/data.json', servers); 
     }
 
-    getServers( ){
+    getServers(){
         return this.http.get('https://ng-test-a84d6.firebaseio.com/data.json'); 
     }
 
