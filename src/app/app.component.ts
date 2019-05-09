@@ -51,9 +51,9 @@ export class AppComponent {
   onGetServers(){
     this.serverService.getServers()
       .subscribe(
-        (servers:any) => {
-          const data = servers.json(); 
-          console.log (  ' 57 - get the data ', data )
+        (servers : any) => {
+          // const data = servers.json(); 
+          console.log (  ' 57 - get the data ', servers )
       }, 
         (error) => console.log('55 error = ', error )
       );
