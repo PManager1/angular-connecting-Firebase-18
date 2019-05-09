@@ -10,5 +10,9 @@ export class ServerService {
         return this.http.post('https://ng-test-a84d6.firebaseio.com/data.json', servers); 
     }
 
+    getServers( data: any ){
+        return this.http.get('https://ng-test-a84d6.firebaseio.com/data.json'); 
+    }
+
 }
 

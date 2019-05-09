@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subscriber } from 'rxjs';
 import { database, initializeApp } from 'firebase';
 import { ServerService } from './server.service';
+import { Response  } from '@angular/http'; 
 
 @Component({
   selector: 'app-root',
@@ -44,9 +45,17 @@ export class AppComponent {
         .subscribe(
       (response)=>  console.log('41-  response =', response ), 
       (error) => console.log('43 error = ', error )
-      
       ); 
-      
+  }
 
+  onGetServers(){
+    this.serverService.getServers()
+      .subscribe(
+        (response:Response ) => {
+          const data = response.json(); 
+          console.log (  ' 57 - get the data ', data )
+      }, 
+        (error) => console.log('55 error = ', error )
+      );
   }
 }
